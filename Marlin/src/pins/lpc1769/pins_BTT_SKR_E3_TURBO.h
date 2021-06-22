@@ -43,7 +43,7 @@
 #define Y_DIAG_PIN                         P1_28  // Y-STOP
 #define Z_DIAG_PIN                         P1_27  // Z-STOP
 #define E0_DIAG_PIN                        P1_26  // E0DET
-#define E1_DIAG_PIN                        P1_25  // E1DET
+#define Z2_DIAG_PIN                        P1_25  // E1DET
 
 //
 // Limit Switches
@@ -114,11 +114,11 @@
   #define E0_CS_PIN                        P0_05
 #endif
 
-#define E1_STEP_PIN                        P2_11
-#define E1_DIR_PIN                         P2_12
-#define E1_ENABLE_PIN                      P0_21
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                        P0_22
+#define Z2_STEP_PIN                        P2_11
+#define Z2_DIR_PIN                         P2_12
+#define Z2_ENABLE_PIN                      P0_21
+#ifndef Z2_CS_PIN
+  #define Z2_CS_PIN                        P0_22
 #endif
 
 #if HAS_TMC_UART
@@ -144,8 +144,8 @@
   #define E0_SERIAL_TX_PIN                 P0_05
   #define E0_SERIAL_RX_PIN                 P0_05
 
-  #define E1_SERIAL_TX_PIN                 P0_22
-  #define E1_SERIAL_RX_PIN                 P0_22
+  #define Z2_SERIAL_TX_PIN                 P0_22
+  #define Z2_SERIAL_RX_PIN                 P0_22
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
@@ -158,7 +158,7 @@
 #define Y_STDBY_PIN                        P3_25
 #define Z_STDBY_PIN                        P1_18
 #define E0_STDBY_PIN                       P1_19
-#define E1_STDBY_PIN                       P2_13
+#define Z2_STDBY_PIN                       P2_13
 
 //
 // Temperature Sensors
@@ -195,9 +195,9 @@
 #define EXP1_03_PIN                        P0_18
 #define EXP1_04_PIN                        P0_17
 #define EXP1_05_PIN                        P0_15
-#define EXP1_06_PIN                        P0_20
+#define EXP1_06_PIN                        P0_19
 #define EXP1_07_PIN                        -1
-#define EXP1_08_PIN                        P0_19
+#define EXP1_08_PIN                        P0_20
 #define EXP1_09_PIN                        P0_16
 #define EXP1_10_PIN                        P2_08
 
@@ -264,3 +264,5 @@
 #elif SD_CONNECTION_IS(CUSTOM_CABLE)
   #error "SD CUSTOM_CABLE is not compatible with SKR E3 Turbo."
 #endif
+
+#define ON_BOARD_SPI_DEVICE                    1  // SPI1
